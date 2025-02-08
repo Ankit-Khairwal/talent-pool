@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Play, Settings, Users, Clock, Check, Building, BookOpen, Briefcase, FileText } from "lucide-react";
+import { Play, Settings, Users, Clock, Check, Building, BookOpen, Briefcase, FileText, ArrowRight } from "lucide-react";
 
 const Index = () => {
   return (
@@ -9,30 +9,39 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Simplify Your HR <br className="hidden sm:block" />
-              <span className="text-primary">Management Today</span>
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Streamline your HR processes, manage employee data, and boost productivity with our all-in-one HR management solution.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" className="text-lg px-8">
-                Start Free Trial
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8">
-                <Play className="mr-2 h-5 w-5" /> Watch Demo
-              </Button>
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-[#F9FAFB]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-left animate-fade-in">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                HR Software That <br />
+                <span className="text-primary">Works For You</span>
+              </h1>
+              <p className="text-xl text-gray-600 mb-8">
+                Streamline your HR processes, manage employee data, and boost productivity with our all-in-one HR management solution.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="text-lg px-8">
+                  Get Started <ArrowRight className="ml-2" />
+                </Button>
+                <Button size="lg" variant="outline" className="text-lg px-8">
+                  <Play className="mr-2 h-5 w-5" /> Watch Demo
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+                alt="HR Management"
+                className="rounded-lg shadow-xl animate-fade-in"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-secondary px-4 sm:px-6 lg:px-8" id="features">
+      <section className="py-20 bg-white px-4 sm:px-6 lg:px-8" id="features">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -75,95 +84,95 @@ const Index = () => {
       </section>
 
       {/* Company Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" id="company">
+      <section className="py-20 bg-[#F9FAFB] px-4 sm:px-6 lg:px-8" id="company">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose RapidHR
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Join thousands of companies that trust RapidHR for their HR management needs
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: <Building className="h-8 w-8 text-primary" />,
-                title: "Industry Leader",
-                description: "Trusted by top companies worldwide",
-              },
-              {
-                icon: <Users className="h-8 w-8 text-primary" />,
-                title: "Expert Support",
-                description: "24/7 dedicated customer support",
-              },
-              {
-                icon: <Briefcase className="h-8 w-8 text-primary" />,
-                title: "Enterprise Ready",
-                description: "Scalable solutions for any size",
-              },
-              {
-                icon: <Check className="h-8 w-8 text-primary" />,
-                title: "Compliance",
-                description: "Stay compliant with regulations",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="mb-4">{item.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
+                alt="Team Collaboration"
+                className="rounded-lg shadow-xl"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Built for modern teams
+              </h2>
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: <Building className="h-6 w-6 text-primary" />,
+                    title: "Enterprise Ready",
+                    description: "Scalable solutions that grow with your business",
+                  },
+                  {
+                    icon: <Users className="h-6 w-6 text-primary" />,
+                    title: "Team Collaboration",
+                    description: "Work together seamlessly across departments",
+                  },
+                  {
+                    icon: <Briefcase className="h-6 w-6 text-primary" />,
+                    title: "Professional Tools",
+                    description: "Advanced features for HR professionals",
+                  },
+                ].map((item, index) => (
+                  <div key={index} className="flex gap-4">
+                    <div className="flex-shrink-0">{item.icon}</div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                      <p className="text-gray-600">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Resources Section */}
-      <section className="py-20 bg-gray-50 px-4 sm:px-6 lg:px-8" id="resources">
+      <section className="py-20 bg-white px-4 sm:px-6 lg:px-8" id="resources">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Resources & Support
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Everything you need to succeed with RapidHR
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <BookOpen className="h-8 w-8 text-primary" />,
-                title: "Knowledge Base",
-                description: "Comprehensive guides and tutorials",
-              },
-              {
-                icon: <FileText className="h-8 w-8 text-primary" />,
-                title: "Documentation",
-                description: "Detailed technical documentation",
-              },
-              {
-                icon: <Users className="h-8 w-8 text-primary" />,
-                title: "Community",
-                description: "Join our growing community",
-              },
-            ].map((resource, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="mb-4">{resource.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{resource.title}</h3>
-                <p className="text-gray-600 mb-4">{resource.description}</p>
-                <Button variant="outline" className="w-full">
-                  Learn More
-                </Button>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Resources & Support
+              </h2>
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: <BookOpen className="h-6 w-6 text-primary" />,
+                    title: "Documentation",
+                    description: "Comprehensive guides and tutorials",
+                  },
+                  {
+                    icon: <FileText className="h-6 w-6 text-primary" />,
+                    title: "API Reference",
+                    description: "Detailed technical documentation",
+                  },
+                  {
+                    icon: <Users className="h-6 w-6 text-primary" />,
+                    title: "Community",
+                    description: "Join our growing community",
+                  },
+                ].map((item, index) => (
+                  <div key={index} className="flex gap-4">
+                    <div className="flex-shrink-0">{item.icon}</div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                      <p className="text-gray-600">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div>
+              <img 
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
+                alt="Resources"
+                className="rounded-lg shadow-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
