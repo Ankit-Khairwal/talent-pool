@@ -4,6 +4,13 @@ import Footer from "@/components/Footer";
 import { Play, Settings, Users, Clock, Check, Building, BookOpen, Briefcase, FileText, ArrowRight } from "lucide-react";
 
 const Index = () => {
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -21,7 +28,7 @@ const Index = () => {
                 Streamline your HR processes, manage employee data, and boost productivity with our all-in-one HR management solution.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-lg px-8" onClick={scrollToProjects}>
                   Get Started <ArrowRight className="ml-2" />
                 </Button>
                 <Button size="lg" variant="outline" className="text-lg px-8">
@@ -173,6 +180,56 @@ const Index = () => {
                 className="rounded-lg shadow-xl"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20 bg-white px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Our Projects
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Explore our collection of successful HR management implementations
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Enterprise HR Suite",
+                description: "Complete HR management solution for large enterprises",
+                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+              },
+              {
+                title: "SMB HR Platform",
+                description: "Tailored HR solutions for small and medium businesses",
+                image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80",
+              },
+              {
+                title: "Startup HR Tools",
+                description: "Essential HR tools for growing startups",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+              },
+            ].map((project, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
+              >
+                <img 
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-gray-600">{project.description}</p>
+                  <Button className="mt-4 w-full">Learn More</Button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
