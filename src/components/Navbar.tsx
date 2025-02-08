@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogIn, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -8,9 +8,9 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Features", href: "#features" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Resources", href: "#resources" },
     { name: "Company", href: "#company" },
+    { name: "Resources", href: "#resources" },
+    { name: "Pricing", href: "#pricing" },
   ];
 
   return (
@@ -33,9 +33,11 @@ const Navbar = () => {
               </a>
             ))}
             <Button variant="ghost" className="text-gray-600">
-              Sign in
+              <LogIn className="mr-2 h-5 w-5" /> Sign in
             </Button>
-            <Button>Get Started</Button>
+            <Button>
+              <Rocket className="mr-2 h-5 w-5" /> Get Started
+            </Button>
           </div>
 
           {/* Mobile Navigation Button */}
@@ -58,15 +60,18 @@ const Navbar = () => {
                   key={item.name}
                   href={item.href}
                   className="block px-3 py-2 text-gray-600 hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
               <div className="mt-4 space-y-2">
                 <Button variant="ghost" className="w-full justify-center">
-                  Sign in
+                  <LogIn className="mr-2 h-5 w-5" /> Sign in
                 </Button>
-                <Button className="w-full justify-center">Get Started</Button>
+                <Button className="w-full justify-center">
+                  <Rocket className="mr-2 h-5 w-5" /> Get Started
+                </Button>
               </div>
             </div>
           </div>

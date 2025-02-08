@@ -1,7 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
-import { Play, Settings, Users, Clock, Check } from "lucide-react";
+import Footer from "@/components/Footer";
+import { Play, Settings, Users, Clock, Check, Building, BookOpen, Briefcase, FileText } from "lucide-react";
 
 const Index = () => {
   return (
@@ -74,6 +74,100 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Company Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8" id="company">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose RapidHR
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Join thousands of companies that trust RapidHR for their HR management needs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Building className="h-8 w-8 text-primary" />,
+                title: "Industry Leader",
+                description: "Trusted by top companies worldwide",
+              },
+              {
+                icon: <Users className="h-8 w-8 text-primary" />,
+                title: "Expert Support",
+                description: "24/7 dedicated customer support",
+              },
+              {
+                icon: <Briefcase className="h-8 w-8 text-primary" />,
+                title: "Enterprise Ready",
+                description: "Scalable solutions for any size",
+              },
+              {
+                icon: <Check className="h-8 w-8 text-primary" />,
+                title: "Compliance",
+                description: "Stay compliant with regulations",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <div className="mb-4">{item.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Resources Section */}
+      <section className="py-20 bg-gray-50 px-4 sm:px-6 lg:px-8" id="resources">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Resources & Support
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Everything you need to succeed with RapidHR
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <BookOpen className="h-8 w-8 text-primary" />,
+                title: "Knowledge Base",
+                description: "Comprehensive guides and tutorials",
+              },
+              {
+                icon: <FileText className="h-8 w-8 text-primary" />,
+                title: "Documentation",
+                description: "Detailed technical documentation",
+              },
+              {
+                icon: <Users className="h-8 w-8 text-primary" />,
+                title: "Community",
+                description: "Join our growing community",
+              },
+            ].map((resource, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <div className="mb-4">{resource.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{resource.title}</h3>
+                <p className="text-gray-600 mb-4">{resource.description}</p>
+                <Button variant="outline" className="w-full">
+                  Learn More
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" id="pricing">
         <div className="max-w-7xl mx-auto">
@@ -138,6 +232,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
